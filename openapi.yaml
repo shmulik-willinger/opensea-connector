@@ -1,0 +1,26 @@
+openapi: 3.0.1
+info:
+  title: OpenSea Transaction Tracker
+  description: Fetches and formats the latest OpenSea transaction for easy reading.
+  version: "v1"
+servers:
+  - url: https://shmulikwillinger.pythonanywhere.com
+paths:
+  /opensea/latest:
+    get:
+      operationId: getLatestTransaction
+      summary: Fetches and formats the latest OpenSea transaction for easy reading.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transaction_id:
+                    type: string
+                  amount:
+                    type: number
+                  date:
+                    type: string
